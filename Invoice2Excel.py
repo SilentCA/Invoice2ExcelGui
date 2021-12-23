@@ -357,6 +357,9 @@ def invoice2Excel(IN_PATH:str, OUT_PATH:str, WRITE_MODE:str):
         extractor = Extractor(file_path)
         try:
             d = extractor.extract()
+            df_item = pd.DataFrame()
+            df_item.loc[0, '发票文件'] = f'=HYPERLINK("{os.path.abspath(file_path)}","{file_path}")'
+            d = pd.concat([d, df_item], axis=1)
             data = pd.concat([data, d], axis=0, sort=False, ignore_index=True)
         except Exception as e:
             print('file error:', file_path, '\n', e)
