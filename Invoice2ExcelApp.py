@@ -22,7 +22,7 @@ logger.addHandler(fh)
 
 
 PROJECT_PATH = pathlib.Path(__file__).parent
-PROJECT_UI = PROJECT_PATH / "invoice2Excel.ui"
+PROJECT_UI = PROJECT_PATH / "Invoice2ExcelApp.ui"
 
 
 class TkTextHandler(logging.Handler):
