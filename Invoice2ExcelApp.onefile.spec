@@ -9,7 +9,8 @@ hidden_imports = [
         ]
 
 data_files = [
-        ('Invoice2ExcelApp.ui','.')
+        ('Invoice2ExcelApp.ui','.'),
+        ('icon.png','.')
         ]
 
 a = Analysis(['Invoice2ExcelApp.py'],
@@ -45,4 +46,5 @@ exe = EXE(pyz,
           disable_windowed_traceback=False,
           target_arch=None,
           codesign_identity=None,
-          entitlements_file=None )
+          entitlements_file=None,
+          icon='icon.ico' )
